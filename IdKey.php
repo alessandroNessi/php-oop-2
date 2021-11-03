@@ -1,3 +1,3 @@
 <?php
-    global $id;
+    global $userId,$magazzinoId, $carrelloId, $prodottoId, $cartaId;
 ?>

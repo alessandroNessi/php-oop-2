@@ -9,8 +9,14 @@
         public function setNome($string){
             $this->nome=$string;
         }
+        public function getNome(){
+            return $this->nome;
+        }
         public function setCognome($string){
             $this->cognome=$string;
+        }
+        public function getCognome(){
+            return $this->cognome;
         }
         public function setCf($string){
             if(strlen($string)==16){
@@ -19,6 +25,9 @@
                 throw new Exception('codice fiscale errato');
             }
         }
+        public function getCf(){
+            return $this->cf;
+        }
         public function setDataNascita($string){
             if(strlen($string)==10){
                 $this->dataNascita=$string;
@@ -26,10 +35,16 @@
                 throw new Exception('data di nascita errata');
             }
         }
+        public function getDataNascita(){
+            return $this->dataNascita;
+        }
         private function assignId(){
             include __DIR__.("/IdKey.php");
-            $id++;
-            $this->id=$id;
+            $userId++;
+            $this->id=$userId;
+        }
+        public function getId(){
+            return $this->id;
         }
         public function __construct($_nome,$_cognome,$_cf,$_dataNascita){
             $this->setNome($_nome);
