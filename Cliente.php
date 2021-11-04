@@ -12,7 +12,6 @@ class Cliente extends Utente{
         foreach($this->carte as $carta){
             if($carta->getNumero()==$_numero){
                 throw new Exception('Carta già presente');
-                return;
             }
         }
         $this->carte[]= new Carta($_numero, $_ccv, $_scadenza);
